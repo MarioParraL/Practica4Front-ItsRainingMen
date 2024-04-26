@@ -37,15 +37,15 @@ const Weather: FunctionComponent = () => {
         });
       })
       .catch((error) => {
-        console.error("Fetch Error:", error);
+        console.error("Error during the fetch", error);
       });
   };
 
   const changeLocationHandler = (e: Event) => {
     const target = e.target as HTMLInputElement;
-    const newLocation = target.value;
+    const newCity = target.value;
     setCoordinates(
-      principalCities[newLocation] || principalCities["Madrid, Spain"],
+      principalCities[newCity] || principalCities["Madrid, Spain"],
     );
   };
 
